@@ -1,7 +1,7 @@
 # Date: May 2019
-# Authors: Omitted for anonymity
-# Affiliations: Omitted for anonymity
-# Contact Information: Omitted for anonymity
+# Authors: Hamed Omidvar, Vahideh Akhlaghi
+# Affiliations: University of California, San Diego
+# Contact Information: homidvar@ucsd.edu, vakhlagh@ucsd.edu
 
 from __future__ import print_function
 
