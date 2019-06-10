@@ -89,3 +89,6 @@ def forward(self, x):
         ...
         
 ```
+
+## Authors:
+Hamed Omdivar, Vahideh Akhlaghi
