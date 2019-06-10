@@ -5,10 +5,10 @@ We introduce a simple auxiliary neural network which generates "slices" of sets 
 This simple auxiliary neural network which we call “Convolutional Slice Generator,” or CSG for short, is unique to the whole network and in this sense the convolutional layers are all associated. Each slice corresponds to a "code vector," which is its representation in the aforementioned low dimensional latent space.
 During the training of the CNN, instead of training the filters of the convolutional layers directly, only the parameters of the CSG and the code vectors of the slices of the filters are trained. The model becomes even more efficient if pre-trained parameters of the CSG are reused. This results in a significant reduction in the number of trainable parameters. Also, once the training is concluded, the CNN can be fully represented using only the parameters of the CSG, the code vectors, the fully connected layers, and the architecture of the CNN. To show the capability of the proposed approach, we considered two of the widely used CNN architectures, namely ResNet and DenseNet and applied this method to them on the CIFAR10 dataset. Our experiments show that while our approach significantly reduces the number of network parameters (up to $5\times$ in our experiments and up to $18\times$ as the network grows in depth), even when applied to already compressed and efficient CNNs such as DenseNet-BC, in most cases the accuracy of the new network remains within one percent of the original network's accuracy and in some cases the accuracy slightly improves. 
 
-This code is based on the following refrences:
--- https://github.com/liuzhuang13/DenseNet
--- https://github.com/D-X-Y/ResNeXt-DenseNet
--- https://github.com/kuangliu/pytorch-cifar
+This code is based on the following refrences: 
+-- https://github.com/liuzhuang13/DenseNet 
+-- https://github.com/D-X-Y/ResNeXt-DenseNet 
+-- https://github.com/kuangliu/pytorch-cifar 
 
 
 ## Implementing The Convolutional Slice Generators
@@ -18,9 +18,10 @@ There are only three main steps that are required to implement CSG on any networ
 2. Defining the code vectors in the constructor of each layer (remember that each layer has its own codes).
 3. Calculating the slices and combining them to make the kernel in each forward pass of each convolutional layer.
 
+
 Let us go through an example. Here we mention the main changes to DenseNet-BC as an example. 
 1. 
-'''
+```
 class DenseNet(nn.Module):
     def __init__(self, block, nblocks, growth_rate=12, reduction=0.5, num_classes=10, reg_mode = False, org = False):
         super(DenseNet, self).__init__()
@@ -40,11 +41,11 @@ class DenseNet(nn.Module):
             ## We merely pass the reference of CSG to all blocks
             layers.append(block(in_planes, self.growth_rate, self.CSG, reg_mode=reg_mode))
             ....
-'''
+```
         
 2. 
 
-'''
+```
 class Bottleneck(nn.Module):
     def __init__(self, in_planes, growth_rate, CSG, reg_mode=False):
     
@@ -63,10 +64,10 @@ class Bottleneck(nn.Module):
         self.kernel2 = None
         self.kernel2_defined = False
         ...
-'''
+```
 
 3. 
-'''
+```
 def forward(self, x):
         ...
         #########################################
@@ -87,4 +88,4 @@ def forward(self, x):
         out = F.conv2d(F.relu(self.bn2(out)),self.kernel2,padding=1)
         ...
         
-'''
+```
