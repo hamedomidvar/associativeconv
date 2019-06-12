@@ -91,4 +91,5 @@ def forward(self, x):
 ```
 
 ## Authors:
-Hamed Omidvar, Vahideh Akhlaghi
+Hamed Omidvar (homidvar at ucsd dot edu), 
+Vahideh Akhlaghi (vakhlagh at ucsd dot edu)
