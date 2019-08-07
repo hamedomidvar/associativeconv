@@ -92,7 +92,7 @@ def forward(self, x):
 
 ## Selected Results
 ![Resnet](results/images/resnet_table.png)
-The results indicated with a * are from original resnet paper.
+The results indicated with a * are from the original resnet paper.
 ![Resnet](results/images/resnet_plot.png)
 
 ## Authors:
