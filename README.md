@@ -95,6 +95,9 @@ def forward(self, x):
 The results indicated with a * are from the original resnet paper.
 ![Resnet](results/images/resnet_plot.png)
 
-## Authors:
+## Pre-print
+https://arxiv.org/abs/1906.04309
+
+## Authors
 Hamed Omidvar (homidvar at ucsd dot edu), 
 Vahideh Akhlaghi (vakhlagh at ucsd dot edu)
