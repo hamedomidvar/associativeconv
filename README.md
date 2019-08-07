@@ -3,13 +3,18 @@ As Convolutional Neural Networks (CNNs) have become deeper and/or wider to achie
 
 We introduce a simple auxiliary neural network which generates "slices" of sets of convolutional filters from a low dimensional latent space.
 This simple auxiliary neural network which we call “Convolutional Slice Generator,” or CSG for short, is unique to the whole network and in this sense the convolutional layers are all associated. Each slice corresponds to a "code vector," which is its representation in the aforementioned low dimensional latent space.
-During the training of the CNN, instead of training the filters of the convolutional layers directly, only the parameters of the CSG and the code vectors of the slices of the filters are trained. The model becomes even more efficient if pre-trained parameters of the CSG are reused. This results in a significant reduction in the number of trainable parameters. Also, once the training is concluded, the CNN can be fully represented using only the parameters of the CSG, the code vectors, the fully connected layers, and the architecture of the CNN. To show the capability of the proposed approach, we considered two of the widely used CNN architectures, namely ResNet and DenseNet and applied this method to them on the CIFAR10 dataset. Our experiments show that while our approach significantly reduces the number of network parameters (up to $5\times$ in our experiments and up to $18\times$ as the network grows in depth), even when applied to already compressed and efficient CNNs such as DenseNet-BC, in most cases the accuracy of the new network remains within one percent of the original network's accuracy and in some cases the accuracy slightly improves. 
+During the training of the CNN, instead of training the filters of the convolutional layers directly, only the parameters of the CSG and the code vectors of the slices of the filters are trained. The model becomes even more efficient if pre-trained parameters of the CSG are reused. This results in a significant reduction in the number of trainable parameters. Also, once the training is concluded, the CNN can be fully represented using only the parameters of the CSG, the code vectors, the fully connected layers, and the architecture of the CNN. To show the capability of the proposed approach, we considered two of the widely used CNN architectures, namely ResNet and DenseNet and applied this method to them on the CIFAR10 and also ImageNet-1000 dataset. Our experiments show that while our approach significantly reduces the number of network parameters (up to $5\times$ in our experiments and up to $18\times$ as the network grows in depth), even when applied to already compressed and efficient CNNs such as DenseNet-BC, in most cases the accuracy of the new network remains within one percent of the original network's accuracy and in some cases the accuracy slightly improves. 
 
 This code is based on the following references: 
 -- https://github.com/liuzhuang13/DenseNet 
 -- https://github.com/D-X-Y/ResNeXt-DenseNet 
 -- https://github.com/kuangliu/pytorch-cifar 
 
+
+## Selected Results
+![Resnet](results/images/resnet_table.png)
+The results indicated with a * are from the original resnet paper.
+![Resnet](results/images/resnet_plot.png)
 
 ## Implementing The Convolutional Slice Generators
 As explained in the paper, the CSG and code vectors replace the ordinary kernel parameters in our method as they are responsible for generating slices of sets of convolutional filters.
@@ -89,11 +94,6 @@ def forward(self, x):
         ...
         
 ```
-
-## Selected Results
-![Resnet](results/images/resnet_table.png)
-The results indicated with a * are from the original resnet paper.
-![Resnet](results/images/resnet_plot.png)
 
 ## Pre-print
 https://arxiv.org/abs/1906.04309
