@@ -11,10 +11,7 @@ This code is based on the following references:
 -- https://github.com/kuangliu/pytorch-cifar 
 
 
-## Selected Results
-![Resnet](results/images/resnet_table.png)
-The results indicated with a * are from the original resnet paper.
-![Resnet](results/images/resnet_plot.png)
+
 
 ## Implementing The Convolutional Slice Generators
 As explained in the paper, the CSG and code vectors replace the ordinary kernel parameters in our method as they are responsible for generating slices of sets of convolutional filters.
