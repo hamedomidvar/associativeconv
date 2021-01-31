@@ -98,7 +98,7 @@ def forward(self, x):
 
 ## Citation
 @inproceedings{omdivar2021associative,
-  title={A diversity-aware model for majority vote ensemble accuracy},
+  title={Associative Convolutional Layers},
   author={Omidvar, Hamed and Akhlaghi, Vahideh and Su, Hao and Franceschetti, Massimo and Gupta, Rajesh},
   booktitle={24rd International Conference on Artificial Intelligence and Statistics (AISTATS)},
   note = "To Appear",
