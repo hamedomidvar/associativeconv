@@ -1,4 +1,4 @@
-# Associative Convolutional Layers (To Appear in AISTATS'21)
+# Associative Convolutional Layers (AISTATS'21)
 As Convolutional Neural Networks (CNNs) become deeper and/or wider to achieve higher accuracies, the number of parameters associated with their convolutional layers has become much more significant. In this work, we provide a general and straightforward method for significantly reducing the number of parameters of convolutional layers of CNNs, during both the training and inference phases, without compromising the accuracy, training time or inference time.
 
 We introduce a simple auxiliary neural network which generates "slices" of sets of convolutional filters from a low dimensional latent space.
