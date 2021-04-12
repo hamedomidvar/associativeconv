@@ -108,7 +108,8 @@ def forward(self, x):
 
 
 ## Pre-print
-https://arxiv.org/abs/1906.04309
+Paper: http://proceedings.mlr.press/v130/omidvar21a/omidvar21a.pdf
+Supplementary Materials: http://proceedings.mlr.press/v130/omidvar21a/omidvar21a-supp.pdf
 
 ## Repo Authors
 Hamed Omidvar (homidvar at ucsd dot edu), 
