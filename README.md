@@ -108,7 +108,8 @@ def forward(self, x):
 
 
 ## Pre-print
-Paper: http://proceedings.mlr.press/v130/omidvar21a/omidvar21a.pdf
+Paper: http://proceedings.mlr.press/v130/omidvar21a/omidvar21a.pdf 
+
 Supplementary Materials: http://proceedings.mlr.press/v130/omidvar21a/omidvar21a-supp.pdf
 
 ## Repo Authors
